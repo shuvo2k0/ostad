@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  // A list of student records. Each record is a Map<String, dynamic> with keys: "name", "id", "score", "grade".
+ 
   List<Map<String, dynamic>> students = [];
 
   // A set to track used IDs so we enforce uniqueness.
@@ -57,7 +57,7 @@ void main() {
     }
 
     // Determine letter grade
-    String grade = _determineGrade(score);
+    String grade = _DetermineGrade(score);
 
     // Add record
     students.add({
@@ -96,19 +96,12 @@ void main() {
   print('Lowest score: $lowestScore');
 }
 
-// Helper function to determine letter grade
-String _determineGrade(double score) {
-  if (score >= 97) return 'A+';
-  if (score >= 93) return 'A';
-  if (score >= 90) return 'A-';
-  if (score >= 87) return 'B+';
-  if (score >= 83) return 'B';
-  if (score >= 80) return 'B-';
-  if (score >= 77) return 'C+';
-  if (score >= 73) return 'C';
-  if (score >= 70) return 'C-';
-  if (score >= 67) return 'D+';
-  if (score >= 63) return 'D';
-  if (score >= 60) return 'D-';
+
+String _DetermineGrade(double score) {
+   if (score >= 90) return 'A+';
+  if (score >= 80) return 'A';
+  if (score >= 70) return 'B';
+  if (score >= 60) return 'C';
+  if (score >= 50) return 'D';
   return 'F';
 }
